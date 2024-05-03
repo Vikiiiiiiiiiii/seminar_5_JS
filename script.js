@@ -135,3 +135,23 @@ console.log(sum);
 // проиграли”
 // 5. * По желанию, создать 2 подсказки, если пользователь ответил
 // неверно
+
+const riddles = {
+    question: 'Who are you?',
+    answer: 'Viki',
+    counter: 0,
+    askQuestion: function () {
+        let enteredAnswer = prompt(this.question);
+        if (enteredAnswer === this.answer) {
+            console.log('fine');
+        } else {
+            console.log('вы проиграли');
+            this.counter++;
+            if (this.counter < 3){
+                this.askQuestion();
+            }
+        }
+    }
+};
+
+riddles.askQuestion();
